@@ -1,0 +1,59 @@
+==== Deploy with AWS EC2 and Capistrano ====
+
+## Server
+
+# Create SV Ubuntu on AWS
+# Get key pair
+
+## Local
+
+# Setup Gemfile
+
+```
+gem 'therubyracer', platforms: :ruby
+gem 'execjs'
+gem 'selenium-webdriver'
+gem 'capistrano', '~> 3.11', require: false
+gem "capistrano-rails", "~> 1.4", require: false
+gem 'capistrano-bundler', '~> 1.5'
+gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+gem 'capistrano-rvm'
+
+```
+
+# Config your database.yml
+
+Create database user:
+
+```
+( sudo -u postgres ) createuser new_user
+```
+
+Create database:
+
+```
+createdb <database name>
+```
+
+# Generate Capistrano file by
+
+```
+cap install
+```
+or 
+```
+cap install [stage you want]
+```
+
+# Config your Capfile
+
+```
+require "capistrano/rvm"
+require "capistrano/bundler"
+require 'capistrano/rails'
+require "capistrano/rails/assets"
+require 'capistrano/puma'
+install_plugin Capistrano::Puma
+```
+
+# Config Deploy.rb and Production.rb
