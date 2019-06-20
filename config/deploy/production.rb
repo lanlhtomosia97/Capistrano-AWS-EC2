@@ -27,7 +27,7 @@ keys: %w(~/Downloads/cap_demo.pem),
 # role-based syntax
 # ==================
 
-# access server by "ssh -i ~/Downloads/cap_demo.pem ec2-user@13.59.20.125"
+# access server by "ssh -i ~/Downloads/cap_demo.pem ec2-user@<ipv4>"
 # cài đặt môi trường
 # tạo ssh key trên sv => add ssh key vào github
 # sudo chmod 400 ~/Downloads/cap_demo.pem read only

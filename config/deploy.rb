@@ -3,9 +3,10 @@ lock "~> 3.11.0"
 
 set :application, "aws-deploy2"
 
-set :repo_url, "git@github.com:lanlhtomosia/docker-rails-master.git"
+set :repo_url, "git@github.com:lanlhtomosia97/Capistrano-AWS-EC2.git"
 set :bundle_without,  %i[development, test]
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+
 #linked_file
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
